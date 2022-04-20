@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Calculator from "./components/Calculator";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { CalculationsProvider } from "./context/CalculationsContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CalculationsProvider>
+      <div className="flex flex-col justify-center justify-between h-screen">
+        <Navbar />
+        <main className="container mx-auto px-12 pb-12">
+          <Calculator />
+        </main>
+        <Footer />
+      </div>
+    </CalculationsProvider>
   );
 }
 
